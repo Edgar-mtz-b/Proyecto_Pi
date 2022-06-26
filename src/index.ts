@@ -221,10 +221,6 @@ function animate() {
   }
   requestAnimationFrame(animate);
   */
-  ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
-  ctx.globalAlpha = 0.25;
-  ctx.fillStyle = 'rgb(0,0,0)';
-  ctx.fillRect(0, 0, w, h);
   imagenSal = new ImageType(pantalla1, null, 300, 300, true);
   initParticles();
   animateParticles();
