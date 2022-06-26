@@ -211,7 +211,7 @@ function animate() {
     */
     // imagenSal = new ImageType(pantalla1, null, 300, 300, true);
     var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
-    imagenSal.imageArray2DtoData(pantalla2, animate());
+    imagenSal.getArrayImg();
     initParticles();
     animateParticles();
 }
