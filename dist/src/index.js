@@ -210,7 +210,7 @@ function animate() {
     requestAnimationFrame(animate);
     */
     // imagenSal = new ImageType(pantalla1, null, 300, 300, true);
-    imagenSal = new ImageType(pantalla4, null, 300, 300, true);
+    imagenSal = new ImageType(pantalla1, null, 300, 300, true);
     initParticles();
     animateParticles();
 }
