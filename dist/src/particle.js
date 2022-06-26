@@ -11,6 +11,7 @@ var Particle = /** @class */ (function () {
         this._2PI = Math.PI * 2;
         this.position1 = Math.floor(this.y);
         this.position2 = Math.floor(this.x);
+        this.density = ((Math.random() * 30) + 1);
         this.mappedImage = mapImg;
     }
     Particle.prototype.update = function () {
@@ -25,6 +26,31 @@ var Particle = /** @class */ (function () {
         if (this.y >= this.height) {
             this.y = 0;
             this.x = Math.random() * this.width;
+        }
+    };
+    Particle.prototype.update2 = function (mouse) {
+        var dx = mouse.x - this.x;
+        var dy = mouse.y - this.y;
+        var distance = Math.sqrt(dx * dx + dy * dy);
+        var forceDirectionX = dx / distance;
+        var forceDirectionY = dy / distance;
+        var maxDistance = mouse.radius;
+        var force = (maxDistance - distance) / maxDistance;
+        var directionX = (forceDirectionX * force * this.density);
+        var directionY = (forceDirectionY * force * this.density);
+        if (distance < mouse.radius) {
+            this.x -= directionX;
+            this.y -= directionY;
+        }
+        else {
+            if (this.x !== this.width) {
+                var dx_1 = this.x - this.width;
+                this.x -= dx_1 / 5;
+            }
+            if (this.y !== this.height) {
+                var dy_1 = this.y - this.height;
+                this.y -= dy_1 / 5;
+            }
         }
     };
     Particle.prototype.draw = function () {
@@ -68,23 +94,21 @@ var ParticleText = /** @class */ (function () {
         }
         else {
             if (this.x !== this.baseX) {
-                var dx_1 = this.x - this.baseX;
-                this.x -= dx_1 / 5;
+                var dx_2 = this.x - this.baseX;
+                this.x -= dx_2 / 5;
             }
             if (this.y !== this.baseY) {
-                var dy_1 = this.y - this.baseY;
-                this.y -= dy_1 / 5;
+                var dy_2 = this.y - this.baseY;
+                this.y -= dy_2 / 5;
             }
         }
     };
     ParticleText.prototype.draw = function () {
-        //this.ctx.fillStyle = 'blue';
-        this.ctx.drawImage;
+        this.ctx.fillStyle = 'blue';
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
         this.ctx.closePath();
         this.ctx.fill();
-        ts;
     };
     return ParticleText;
 }());
