@@ -223,8 +223,8 @@ function animate() {
   */
  // imagenSal = new ImageType(pantalla1, null, 300, 300, true);
  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
-  var imagen2:ImageType = new ImageType(pantalla4, imgLocal4.getImage());
- imagenSal.imageArray2DtoDataWithResizing(pantalla2, MathImg.marcaAguaArray(imagenSal, imagen2, 0.25));
+  var imagen2:ImageType = new ImageType(pantalla1, imgLocal4.getImage());
+ imagenSal.imageArray2DtoDataWithResizing(pantalla1, MathImg.marcaAguaArray(imagenSal, imagen2, 0.25));
   initParticles();
   animateParticles();
 }
