@@ -222,7 +222,9 @@ function animate() {
   requestAnimationFrame(animate);
   */
  // imagenSal = new ImageType(pantalla1, null, 300, 300, true);
- imagenSal = new ImageType(pantalla1, null, 300, 300, true);
+ var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  var imagen2:ImageType = new ImageType(pantalla4, imgLocal4.getImage());
+  imagenSal= new ImageType(pantalla1, null, 300, 300, true);
  initParticles();
  animateParticles();
 }
