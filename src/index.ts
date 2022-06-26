@@ -2,10 +2,10 @@
 import { ImageLocal } from "./ImageLocal.js";
 import { ImageType } from "./ImageType.js";
 import { MathImg } from "./MathImg.js";
-import { Particle } from "./particle.js";
+//import { Particle } from "./particle.js";
 import { ParticleText } from "./particle.js";
 import { CanvasLocal } from './canvasLocal.js';
-
+import {Particle}from "./particle";
 let lienzo1: HTMLCanvasElement;
 let lienzo2: HTMLCanvasElement;
 let lienzo4: HTMLCanvasElement;

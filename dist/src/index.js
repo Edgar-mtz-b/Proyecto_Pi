@@ -198,19 +198,15 @@ function init() {
 }
 //funcion de particulas de lluvia negra
 function animate() {
-    /*
     ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
     ctx.globalAlpha = 0.25;
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
-    for (let i = 0; i < particlesArray.length; i++){
-      particlesArray[i].update();
-      particlesArray[i].draw();
+    for (var i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
     }
     requestAnimationFrame(animate);
-    */
-    // imagenSal = new ImageType(pantalla1, null, 300, 300, true);
-    imagenSal = new ImageType(pantalla1, null, 300, 300, true);
     initParticles();
     animateParticles();
 }
