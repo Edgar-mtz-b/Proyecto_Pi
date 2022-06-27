@@ -11,6 +11,8 @@ var Particle = /** @class */ (function () {
         this.mappedImage = mapImg;
     }
     Particle.prototype.update = function (mouse) {
+        this.position1 = Math.floor(this.y);
+        this.position2 = Math.floor(this.x);
         var dx = mouse.x - this.x;
         var dy = mouse.y - this.y;
         var distance = Math.sqrt(dx * dx + dy * dy);
@@ -95,6 +97,8 @@ var ParticleText = /** @class */ (function () {
         this.density = ((Math.random() * 30) + 1);
         this._2PI = Math.PI * 2;
         this.mappedImage = mapImg;
+        this.position1 = Math.floor(this.y);
+        this.position2 = Math.floor(this.x);
     }
     ParticleText.prototype.update = function (mouse) {
         var dx = mouse.x - this.x;
@@ -122,10 +126,11 @@ var ParticleText = /** @class */ (function () {
         }
     };
     ParticleText.prototype.draw = function () {
-        this.ctx.fillStyle = 'blue';
         this.ctx.beginPath();
+        this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];
+        this.ctx.lineWidth = 50;
+        //this.ctx.fillStyle = 'white';
         this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
-        this.ctx.closePath();
         this.ctx.fill();
     };
     return ParticleText;
