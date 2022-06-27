@@ -286,6 +286,7 @@ function animateParticles(){
       particleArray[i].update();
       particleArray[i].draw();
   }
+  animateParticles();
   requestAnimationFrame(animateParticles);
 }
 //seccion de histogramas  
