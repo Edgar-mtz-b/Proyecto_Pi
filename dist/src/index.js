@@ -222,6 +222,7 @@ function animate2() {
 function rain(evt) {
     init();
     animate();
+    animate2();
 }
 function rain2(evt) {
     init();
