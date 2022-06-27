@@ -97,18 +97,26 @@ export class ParticleText {
     this.weight=2;
     this.directionX=1;
   }
-  public update(mouse:any)
+  public update()
   {
     this.weight +=0.01;
     this.y+=this.weight;
   }
   public draw()
   {
-    this.ctx.fillStyle = 'blue';
+    this.ctx.fillStyle='red';
     this.ctx.beginPath();
-    this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
+    this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
     this.ctx.closePath();
     this.ctx.fill();
+  this.ctx.fillStyle='rgba(255,255,0.01)';
+    let  particle1 =new ParticleText(100,50);
+    function animate(){
+      
+      particle1.update(MouseEvent);
+      particle1.draw();
+      requestAnimationFrame(animate);
+    }
   }
   
   /*
