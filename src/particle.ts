@@ -72,8 +72,8 @@ export class ParticleText {
   //cambios
   protected weight:number;
   protected directionX:number;
-  /*
-  constructor(x: number, y: number, screenCanvas?: CanvasRenderingContext2D,
+  
+  constructor2(x: number, y: number, screenCanvas?: CanvasRenderingContext2D,
     mapImg?: number[][][]) {
     this.ctx = screenCanvas;
     this.x = x;// + 200;
@@ -85,7 +85,7 @@ export class ParticleText {
     this._2PI = Math.PI * 2;
     this.mappedImage = mapImg;
   }
-*/
+
   constructor(x:number,y:number,screenCanvas?: CanvasRenderingContext2D,
     mapImg?: number[][][])
   {
@@ -97,14 +97,14 @@ export class ParticleText {
     this.weight=2;
     this.directionX=1;
   }
-  public update()
+  public update2()
   {
     this.weight +=0.01;
     this.y+=this.weight;
   }
-  public draw()
+  public draw2()
   {
-    this.ctx.fillStyle = 'blue';
+    this.ctx.fillStyle = 'red';
     this.ctx.beginPath();
     this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
     this.ctx.closePath();
@@ -127,7 +127,7 @@ export class ParticleText {
     */
   }
   
-  /*
+  
   public update(mouse: any) {
     let dx = mouse.x - this.x;
     let dy = mouse.y - this.y;
@@ -154,8 +154,8 @@ export class ParticleText {
       }
     }
   }
-*/
-/*
+
+
   public draw() {
     this.ctx.fillStyle = 'blue';
     this.ctx.beginPath();
@@ -163,5 +163,5 @@ export class ParticleText {
     this.ctx.closePath();
     this.ctx.fill();
   }
-*/
+
 }
