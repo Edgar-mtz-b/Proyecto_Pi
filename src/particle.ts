@@ -109,14 +109,7 @@ export class ParticleText {
       }
     }
   }
-  public draw() {
-    this.ctx.beginPath();
-    //this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];
-    this.ctx.fillStyle = 'white';
-    this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
-    this.ctx.fill();
-  }
-/*
+
   public draw() {
     this.ctx.fillStyle = 'blue';
     this.ctx.beginPath();
@@ -124,5 +117,5 @@ export class ParticleText {
     this.ctx.closePath();
     this.ctx.fill();
   }
-*/
+
 }
