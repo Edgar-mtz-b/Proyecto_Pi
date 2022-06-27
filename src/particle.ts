@@ -106,7 +106,7 @@ export class ParticleText {
   {
     this.ctx.fillStyle = 'blue';
     this.ctx.beginPath();
-    this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
+    this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
     this.ctx.closePath();
     this.ctx.fill();
     /*
