@@ -222,7 +222,7 @@ function animate() {
   */
   pantalla1.clearRect(0,0,300,300);
   //ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
-  pantalla1.drawImage(imgLocal.getImage(), 0, 0, w, h);
+  pantalla2.drawImage(imgLocal.getImage(), 0, 0, w, h);
   for (let i = 0; i < particleArray.length; i++){
       particleArray[i].update(mouse);
       particleArray[i].draw();
