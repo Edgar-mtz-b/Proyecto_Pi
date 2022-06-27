@@ -51,6 +51,8 @@ var ParticleText = /** @class */ (function () {
         this.density = ((Math.random() * 30) + 1);
         this._2PI = Math.PI * 2;
         this.mappedImage = mapImg;
+        this.weight = 2;
+        this.directionX = 1;
     }
     ParticleText.prototype.update = function (mouse) {
         var dx = mouse.x - this.x;
