@@ -29,6 +29,8 @@ export class Particle {
   }
 
   public update(mouse: any) {
+    this.position1 = Math.floor(this.y);
+    this.position2 = Math.floor(this.x);
     let dx = mouse.x - this.x;
     let dy = mouse.y - this.y;
     let distance = Math.sqrt(dx*dx + dy*dy);
@@ -115,7 +117,8 @@ export class ParticleText {
   protected baseY: number;
   protected density: number;
   protected mappedImage: any[][][];
-  
+  protected position1: number;
+  protected position2: number;
   constructor(x: number, y: number, screenCanvas?: CanvasRenderingContext2D,
     mapImg?: number[][][]) {
     this.ctx = screenCanvas;
@@ -127,6 +130,8 @@ export class ParticleText {
     this.density = ((Math.random() * 30) + 1);
     this._2PI = Math.PI * 2;
     this.mappedImage = mapImg;
+    this.position1 = Math.floor(this.y);
+    this.position2 = Math.floor(this.x);
   }
 
   public update(mouse: any) {
@@ -155,7 +160,16 @@ export class ParticleText {
       }
     }
   }
-
+  public draw() {
+    this.ctx.beginPath();
+   
+    this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];
+    this.ctx.lineWidth=50;
+    //this.ctx.fillStyle = 'white';
+    this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
+    this.ctx.fill();
+  }
+/*
   public draw() {
     this.ctx.fillStyle = 'blue';
     this.ctx.beginPath();
@@ -163,5 +177,5 @@ export class ParticleText {
     this.ctx.closePath();
     this.ctx.fill();
   }
-
+*/
 }
