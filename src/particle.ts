@@ -109,9 +109,10 @@ export class ParticleText {
     this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
     this.ctx.closePath();
     this.ctx.fill();
-  
-    let  particle1 =new ParticleText(100,10);
+  this.ctx.fillStyle='rgba(255,255,0.01)';
+    let  particle1 =new ParticleText(100,50);
     function animate(){
+      
       particle1.update(MouseEvent);
       particle1.draw();
       requestAnimationFrame(animate);
