@@ -116,11 +116,14 @@ export class ParticleText {
   }
 
   public draw() {
+    /*
     this.ctx.fillStyle = 'blue';
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
     this.ctx.closePath();
     this.ctx.fill();
+    */
+   this.ctx.drawImage(this.ctx.canvas,this.x,this.y);
   }
 
 }
