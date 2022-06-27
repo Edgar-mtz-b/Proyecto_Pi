@@ -265,7 +265,6 @@ function animateParticles() {
     for (var i = 0; i < particleArray.length; i++) {
         particleArray[i].update2();
         particleArray[i].draw2();
-        particleArray[i].update(mouse);
         particleArray[i].draw();
     }
     requestAnimationFrame(animateParticles);
