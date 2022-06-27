@@ -72,7 +72,8 @@ export class ParticleText {
   //cambios
   protected weight:number;
   protected directionX:number;
-  constructor(x: number, y: number, screenCanvas?: CanvasRenderingContext2D,
+  
+  constructor2(x: number, y: number, screenCanvas?: CanvasRenderingContext2D,
     mapImg?: number[][][]) {
     this.ctx = screenCanvas;
     this.x = x;// + 200;
@@ -83,11 +84,50 @@ export class ParticleText {
     this.density = ((Math.random() * 30) + 1);
     this._2PI = Math.PI * 2;
     this.mappedImage = mapImg;
-    
+  }
+
+  constructor(x:number,y:number,screenCanvas?: CanvasRenderingContext2D,
+    mapImg?: number[][][])
+  {
+    this.ctx = screenCanvas;
+    this.mappedImage = mapImg;
+    this.x=x;
+    this.y=y;
+    this.size=10;
     this.weight=2;
     this.directionX=1;
   }
-
+  public update2()
+  {
+    this.weight +=0.01;
+    this.y+=this.weight;
+  }
+  public draw2()
+  {
+    this.ctx.fillStyle = 'red';
+    this.ctx.beginPath();
+    this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    this.ctx.closePath();
+    this.ctx.fill();
+    /*
+    this.ctx.fillStyle='red';
+    this.ctx.beginPath();
+    this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    this.ctx.closePath();
+    this.ctx.fill();
+    
+  this.ctx.fillStyle='rgba(255,255,0.01)';
+    let  particle1 =new ParticleText(100,50);
+    function animate(){
+      
+      particle1.update();
+      particle1.draw();
+      requestAnimationFrame(animate);
+    }
+    */
+  }
+  
+  
   public update(mouse: any) {
     let dx = mouse.x - this.x;
     let dy = mouse.y - this.y;
@@ -115,15 +155,13 @@ export class ParticleText {
     }
   }
 
+
   public draw() {
-    /*
     this.ctx.fillStyle = 'blue';
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
     this.ctx.closePath();
     this.ctx.fill();
-    */
-   this.ctx.drawImage(this.ctx.canvas,this.x,this.y);
   }
 
 }
