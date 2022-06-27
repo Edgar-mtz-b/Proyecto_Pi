@@ -209,21 +209,18 @@ function init() {
   }
 }
 function init2() {
-  
   //init
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
-  let inicio=0, termino= imagenSal.getWidth()/2;
-  inicio = termino;
-  termino = 2 * imagenSal.getWidth() / 2;
   let tmp = MathImg.relativeBrightness(imagenSal);
-  w = termino;
+  w = (imagenSal.getWidth()/2)+(imagenSal.getWidth()/2);
   h = imagenSal.getHeight();
-  for (let i = inicio; i < termino; i++){
+  for (let i = 0; i < numberOfParticles; i++){
     particlesArray.push(new Particle(w, h, ctx, tmp));
   }
 }
 //funcion de particulas de lluvia negra
 function animate() {
+  convertirARojo;
   ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
   ctx.globalAlpha = 0.25;
   ctx.fillStyle = 'rgb(0,0,0)';
@@ -232,7 +229,6 @@ function animate() {
     particlesArray[i].update();
     particlesArray[i].draw();
   }
-  
   requestAnimationFrame(animate);
 }
 
