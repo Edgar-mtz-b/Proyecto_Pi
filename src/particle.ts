@@ -104,12 +104,18 @@ export class ParticleText {
   }
   public draw()
   {
+    this.ctx.fillStyle = 'blue';
+    this.ctx.beginPath();
+    this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
+    this.ctx.closePath();
+    this.ctx.fill();
+    /*
     this.ctx.fillStyle='red';
     this.ctx.beginPath();
     this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
     this.ctx.closePath();
     this.ctx.fill();
-    /*
+    
   this.ctx.fillStyle='rgba(255,255,0.01)';
     let  particle1 =new ParticleText(100,50);
     function animate(){
