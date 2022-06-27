@@ -48,6 +48,7 @@ export class Particle {
 
   public draw() {
     this.ctx.beginPath();
+    this.ctx.lineWidth=5;
     this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];
     //this.ctx.fillStyle = 'white';
     this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
