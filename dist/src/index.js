@@ -223,7 +223,8 @@ function animate2() {
     requestAnimationFrame(animate2);
 }
 function rain(evt) {
-    init();
+    //  init();
+    initParticles();
     animateParticles();
     animate();
 }
