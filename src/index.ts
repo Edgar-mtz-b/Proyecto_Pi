@@ -218,6 +218,8 @@ function animate() {
     particlesArray[i].update();
     particlesArray[i].draw();
   }
+  initParticles();
+  animateParticles();
   requestAnimationFrame(animate);
 }
 
