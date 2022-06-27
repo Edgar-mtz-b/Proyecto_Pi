@@ -198,22 +198,13 @@ function init() {
 }
 //funcion de particulas de lluvia negra
 function animate() {
-    /*
     ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
     ctx.globalAlpha = 0.25;
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
-    for (let i = 0; i < particlesArray.length; i++){
-      particlesArray[i].update(mouse);
-      particlesArray[i].draw();
-    }
-    */
-    pantalla1.clearRect(0, 0, 300, 300);
-    //ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
-    pantalla2.drawImage(imgLocal.getImage(), 0, 0, w, h);
-    for (var i = 0; i < particleArray.length; i++) {
-        particleArray[i].update(mouse);
-        particleArray[i].draw();
+    for (var i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
     }
     requestAnimationFrame(animate);
 }
@@ -222,7 +213,7 @@ function animate2() {
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
     for (var i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update(mouse);
+        particlesArray[i].update();
         ctx.globalAlpha = particlesArray[i].getSpeed() * 0.5;
         particlesArray[i].draw();
     }
