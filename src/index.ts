@@ -225,7 +225,6 @@ function animate() {
       particleArray[i].update(mouse);
       particleArray[i].draw();
   }
-  requestAnimationFrame(animateParticles);
   requestAnimationFrame(animate);
 }
 
