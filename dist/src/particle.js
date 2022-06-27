@@ -43,15 +43,6 @@ export { Particle };
 var ParticleText = /** @class */ (function () {
     function ParticleText(x, y, screenCanvas, mapImg) {
         this.ctx = screenCanvas;
-        this.mappedImage = mapImg;
-        this.x = x;
-        this.y = y;
-        this.size = 10;
-        this.weight = 2;
-        this.directionX = 1;
-    }
-    ParticleText.prototype.constructor2 = function (x, y, screenCanvas, mapImg) {
-        this.ctx = screenCanvas;
         this.x = x; // + 200;
         this.y = y; // - 100,
         this.size = 1;
@@ -60,34 +51,7 @@ var ParticleText = /** @class */ (function () {
         this.density = ((Math.random() * 30) + 1);
         this._2PI = Math.PI * 2;
         this.mappedImage = mapImg;
-    };
-    ParticleText.prototype.update2 = function () {
-        this.weight += 0.01;
-        this.y += this.weight;
-    };
-    ParticleText.prototype.draw2 = function () {
-        this.ctx.fillStyle = 'red';
-        this.ctx.beginPath();
-        this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        this.ctx.closePath();
-        this.ctx.fill();
-        /*
-        this.ctx.fillStyle='red';
-        this.ctx.beginPath();
-        this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-        this.ctx.closePath();
-        this.ctx.fill();
-        
-      this.ctx.fillStyle='rgba(255,255,0.01)';
-        let  particle1 =new ParticleText(100,50);
-        function animate(){
-          
-          particle1.update();
-          particle1.draw();
-          requestAnimationFrame(animate);
-        }
-        */
-    };
+    }
     ParticleText.prototype.update = function (mouse) {
         var dx = mouse.x - this.x;
         var dy = mouse.y - this.y;
