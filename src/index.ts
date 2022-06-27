@@ -197,7 +197,7 @@ const numberOfParticles = 1000;
 let particlesArray: Particle[];
 particlesArray = new Array(0);
 var imagenSal: ImageType;
-
+/*
 function init() {
   //init
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
@@ -207,6 +207,17 @@ function init() {
   for (let i = 0; i < numberOfParticles; i++){
     particlesArray.push(new Particle(w, h, ctx, tmp));
   }
+}
+*/
+function init()
+{
+  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  let tmp = MathImg.relativeBrightness(imagenSal);
+  w = imagenSal.getWidth();
+  h = imagenSal.getHeight();
+  for (let i = 0; i < numberOfParticles; i++){
+    particlesArray.push(new Particle(w,h,ctx,tmp));
+}
 }
 //funcion de particulas de lluvia negra
 function animate() {
@@ -269,6 +280,8 @@ function textEfects(evt: any): void{
   initParticles();
   animateParticles();
 }
+
+
 
 function initParticles() {
   particleArray = [];
