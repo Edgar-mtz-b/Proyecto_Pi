@@ -199,8 +199,11 @@ function init() {
 function init2() {
     //init
     var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
+    var inicio = 0, termino = imagenSal.getWidth() / 2;
+    inicio = termino;
+    termino = 2 * imagenSal.getWidth() / 2;
     var tmp = MathImg.relativeBrightness(imagenSal);
-    w = (imagenSal.getWidth() / 2) + (imagenSal.getWidth() / 2);
+    w = termino;
     h = imagenSal.getHeight();
     for (var i = 0; i < numberOfParticles; i++) {
         particlesArray.push(new Particle(w, h, ctx, tmp));
