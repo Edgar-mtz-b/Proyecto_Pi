@@ -186,8 +186,19 @@ var numberOfParticles = 1000;
 var particlesArray;
 particlesArray = new Array(0);
 var imagenSal;
+/*
 function init() {
-    //init
+  //init
+  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  let tmp = MathImg.relativeBrightness(imagenSal);
+  w = imagenSal.getWidth();
+  h = imagenSal.getHeight();
+  for (let i = 0; i < numberOfParticles; i++){
+    particlesArray.push(new Particle(w, h, ctx, tmp));
+  }
+}
+*/
+function init() {
     var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
     var tmp = MathImg.relativeBrightness(imagenSal);
     w = imagenSal.getWidth();

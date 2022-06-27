@@ -64,6 +64,8 @@ var Particle = /** @class */ (function () {
         this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         this.ctx.fill();
     };
+    Particle.prototype.init = function () {
+    };
     /*
       public update() {
         this.position1 = Math.floor(this.y);

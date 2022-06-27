@@ -88,7 +88,7 @@ public draw()
             this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             this.ctx.fill();
 }
-public init()
+public animate()
 {
   
 }
