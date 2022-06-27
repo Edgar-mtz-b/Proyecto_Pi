@@ -248,8 +248,7 @@ function textEfects(evt) {
     imagenSal = new ImageType(pantalla1, null, 300, 300, true);
     initParticles();
     animateParticles();
-    init();
-    animate();
+    rain(imagenSal);
 }
 function initParticles() {
     particleArray = [];
