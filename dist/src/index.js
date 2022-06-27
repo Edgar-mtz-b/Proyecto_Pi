@@ -188,6 +188,7 @@ particlesArray = new Array(0);
 var imagenSal;
 function init() {
     //init
+    convertirARojo;
     var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
     var tmp = MathImg.relativeBrightness(imagenSal);
     w = imagenSal.getWidth();
@@ -208,7 +209,6 @@ function init2() {
 }
 //funcion de particulas de lluvia negra
 function animate() {
-    convertirARojo;
     ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
     ctx.globalAlpha = 0.25;
     ctx.fillStyle = 'rgb(0,0,0)';
@@ -233,7 +233,6 @@ function animate2() {
 function rain(evt) {
     init();
     animate();
-    rain2;
 }
 function rain2(evt) {
     init2();
