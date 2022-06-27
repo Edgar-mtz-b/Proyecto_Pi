@@ -245,9 +245,10 @@ function animate2() {
 }
 
 function rain(evt: any): void { 
+  convertirARojo;
   init();
   animate();
-  convertirARojo;
+  
 }
 
 function rain2(evt: any): void { 
