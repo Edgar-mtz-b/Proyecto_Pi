@@ -109,10 +109,15 @@ export class ParticleText {
     this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
     this.ctx.closePath();
     this.ctx.fill();
-    requestAnimationFrame(animate);
-   
+  
+    let  particle1 =new ParticleText(100,10);
+    function animate(){
+      particle1.update(MouseEvent);
+      particle1.draw();
+      requestAnimationFrame(animate);
+    }
   }
- 
+  
   /*
   public update(mouse: any) {
     let dx = mouse.x - this.x;

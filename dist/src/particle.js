@@ -71,15 +71,10 @@ var ParticleText = /** @class */ (function () {
     ParticleText.prototype.draw = function () {
         this.ctx.fillStyle = 'red';
         this.ctx.beginPath();
-        //this.ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         this.ctx.closePath();
         this.ctx.fill();
-        var particle1 = new ParticleText(100, 10);
-        function animate() {
-            particle1.update(MouseEvent);
-            particle1.draw();
-            requestAnimationFrame(animate);
-        }
+        requestAnimationFrame(animate);
     };
     return ParticleText;
 }());
