@@ -197,7 +197,7 @@ const numberOfParticles = 1000;
 let particlesArray: Particle[];
 particlesArray = new Array(0);
 var imagenSal: ImageType;
-/*
+
 function init() {
   //init
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
@@ -208,33 +208,7 @@ function init() {
     particlesArray.push(new Particle(w, h, ctx, tmp));
   }
 }
-*/
-function init()
-{
-  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
-  let tmp = MathImg.relativeBrightness(imagenSal);
-  w = imagenSal.getWidth();
-  h = imagenSal.getHeight();
-  for (let i = 0; i < numberOfParticles; i++){
-    particlesArray.push(new Particle(w,h,ctx,tmp));
-}
-}
 //funcion de particulas de lluvia negra
-function animate()
-{
-  ctx.globalAlpha = 0.05;
-  ctx.fillStyle = 'rgb(0, 0, 0)';
-  ctx.fillRect(0, 0, w,h);
-  ctx.globalAlpha = 0.2;
-  for (let i = 0; i < particlesArray.length; i++){
-  particlesArray[i].update();
-  //ctx.globalAlpha = particlesArray[i].speed * 0.3;
-      ctx.globalAlpha = 1;
-      particlesArray[i].draw();
-        }
-        requestAnimationFrame(animate);
-}
-/*
 function animate() {
   ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
   ctx.globalAlpha = 0.25;
@@ -244,10 +218,11 @@ function animate() {
     particlesArray[i].update();
     particlesArray[i].draw();
   }
-  
+  initParticles();
+  animateParticles();
   requestAnimationFrame(animate);
 }
-*/
+
 function animate2() {
   ctx.globalAlpha = 0.25;
   ctx.fillStyle = 'rgb(0,0,0)';
@@ -295,8 +270,6 @@ function textEfects(evt: any): void{
   initParticles();
   animateParticles();
 }
-
-
 
 function initParticles() {
   particleArray = [];
