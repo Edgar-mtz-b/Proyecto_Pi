@@ -237,7 +237,8 @@ function animate2() {
 }
 
 function rain(evt: any): void { 
-  init();
+//  init();
+  initParticles();
   animateParticles();
   animate();
 }
