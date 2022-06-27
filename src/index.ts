@@ -200,7 +200,6 @@ var imagenSal: ImageType;
 
 function init() {
   //init
-  convertirARojo;
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
   let tmp = MathImg.relativeBrightness(imagenSal);
   w = imagenSal.getWidth();
@@ -246,6 +245,7 @@ function animate2() {
 }
 
 function rain(evt: any): void { 
+  convertirARojo;
   init();
   animate();
 }
