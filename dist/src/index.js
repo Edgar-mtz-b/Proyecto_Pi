@@ -188,7 +188,6 @@ particlesArray = new Array(0);
 var imagenSal;
 function init() {
     //init
-    convertirARojo;
     var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
     var tmp = MathImg.relativeBrightness(imagenSal);
     w = imagenSal.getWidth();
@@ -231,6 +230,7 @@ function animate2() {
     requestAnimationFrame(animate2);
 }
 function rain(evt) {
+    convertirARojo;
     init();
     animate();
 }
