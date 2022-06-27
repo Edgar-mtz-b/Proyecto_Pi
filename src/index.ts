@@ -200,7 +200,7 @@ var imagenSal: ImageType;
 
 function init() {
   //init
-  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  var imagenSal: ImageType = new ImageType(pantalla1,imagenSal.getArrayImg()) //imgLocal.getImage());
   let tmp = MathImg.relativeBrightness(imagenSal);
   w = imagenSal.getWidth();
   h = imagenSal.getHeight();
