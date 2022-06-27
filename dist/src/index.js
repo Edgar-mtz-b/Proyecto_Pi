@@ -208,8 +208,10 @@ function animate() {
       particlesArray[i].draw();
     }
     */
-    imagenSal = new ImageType(pantalla2, null, 300, 300, true);
-    requestAnimationFrame(animate);
+    imagenSal = new ImageType(pantalla1, null, 300, 300, true);
+    init();
+    animateParticles();
+    //  requestAnimationFrame(animate);
 }
 function animate2() {
     ctx.globalAlpha = 0.25;
@@ -223,9 +225,6 @@ function animate2() {
     requestAnimationFrame(animate2);
 }
 function rain(evt) {
-    //  init();
-    initParticles();
-    animateParticles();
     animate();
 }
 function rain2(evt) {
@@ -261,7 +260,7 @@ function initParticles() {
     for (var i = 0; i < 300; i++) {
         for (var j = 0; j < 300; j++) {
             if (arrImage[0][i][j] > 128) {
-                particleArray.push(new ParticleText(j, i, pantalla2));
+                particleArray.push(new ParticleText(j, i, pantalla1));
             }
         }
     }
