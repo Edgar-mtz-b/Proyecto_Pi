@@ -220,9 +220,9 @@ function animate() {
     particlesArray[i].draw();
   }
   */
-  imagenSal = new ImageType(pantalla1, null, 300, 300, true);
-  init();  
-  animateParticles();
+//  imagenSal = new ImageType(pantalla1, null, 300, 300, true);
+//  init();  
+//  animateParticles();
 //  requestAnimationFrame(animate);
 }
 
@@ -239,7 +239,8 @@ function animate2() {
 }
 
 function rain(evt: any): void { 
-  
+  init();
+  initParticles();
   animate();
 }
 
