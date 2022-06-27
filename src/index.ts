@@ -220,7 +220,7 @@ function init2() {
 }
 //funcion de particulas de lluvia negra
 function animate() {
-  ctx.globalAlpha = 0.25;
+  ctx.globalAlpha = 0.50;
   ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
   ctx.globalAlpha = 0.25;
   ctx.fillStyle = 'rgb(0,0,0)';
