@@ -220,7 +220,7 @@ function animate() {
     particlesArray[i].draw();
   }
   */
-  imagenSal = new ImageType(pantalla2, null, 300, 300, true);
+  imagenSal = new ImageType(pantalla1, null, 300, 300, true);
   init();  
   animateParticles();
 //  requestAnimationFrame(animate);
@@ -281,7 +281,7 @@ function initParticles() {
   for (let i = 0; i < 300; i++){
     for (let j = 0; j < 300; j++) { 
       if (arrImage[0][i][j] > 128) {
-        particleArray.push(new ParticleText(j, i, pantalla2));
+        particleArray.push(new ParticleText(j, i, pantalla1));
       }
     }
   } 
