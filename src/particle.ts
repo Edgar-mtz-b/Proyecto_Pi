@@ -21,7 +21,7 @@ export class Particle {
     this.x = Math.random() * width;
     this.y = 0;
     this.speed = 0;
-    this.velocity = Math.random() * 2.5;
+    this.velocity = Math.random() * 0.5;
     this.size = Math.random() * 1.5 + 1;
     this._2PI = Math.PI * 2;
     this.position1 = Math.floor(this.y);
