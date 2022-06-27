@@ -69,7 +69,9 @@ export class ParticleText {
   protected baseY: number;
   protected density: number;
   protected mappedImage: any[][][];
-  
+  //cambios
+  protected weight:number;
+  protected directionX:number;
   constructor(x: number, y: number, screenCanvas?: CanvasRenderingContext2D,
     mapImg?: number[][][]) {
     this.ctx = screenCanvas;
@@ -81,6 +83,9 @@ export class ParticleText {
     this.density = ((Math.random() * 30) + 1);
     this._2PI = Math.PI * 2;
     this.mappedImage = mapImg;
+    
+    this.weight=2;
+    this.directionX=1;
   }
 
   public update(mouse: any) {
