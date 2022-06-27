@@ -113,7 +113,7 @@ export class ParticleText {
     let  particle1 =new ParticleText(100,50);
     function animate(){
       
-      particle1.update(MouseEvent);
+      particle1.update();
       particle1.draw();
       requestAnimationFrame(animate);
     }

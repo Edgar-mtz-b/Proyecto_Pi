@@ -263,7 +263,7 @@ function initParticles() {
 function animateParticles() {
     pantalla1.clearRect(0, 0, 300, 300);
     for (var i = 0; i < particleArray.length; i++) {
-        particleArray[i].update(mouse);
+        particleArray[i].update();
         particleArray[i].draw();
     }
     requestAnimationFrame(animateParticles);
