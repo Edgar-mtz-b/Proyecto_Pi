@@ -220,8 +220,6 @@ function animate() {
   }
   
   requestAnimationFrame(animate);
-  initParticles();
-  animateParticles();
 }
 
 function animate2() {

@@ -206,9 +206,9 @@ function animate() {
         particlesArray[i].update();
         particlesArray[i].draw();
     }
+    requestAnimationFrame(animate);
     initParticles();
     animateParticles();
-    requestAnimationFrame(animate);
 }
 function animate2() {
     ctx.globalAlpha = 0.25;
