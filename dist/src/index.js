@@ -198,27 +198,30 @@ function init() {
 }
 //funcion de particulas de lluvia negra
 function animate() {
+    /*
     ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
     ctx.globalAlpha = 0.25;
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
-    /*
     for (let i = 0; i < particlesArray.length; i++){
-      particleArray[i].update(mouse);
+      particlesArray[i].update(mouse);
       particlesArray[i].draw();
     }
     */
-    //  imagenSal = new ImageType(pantalla1, null, 300, 300, true);
-    //  init();  
-    //  animateParticles();
-    //  requestAnimationFrame(animate);
+    pantalla1.clearRect(0, 0, 300, 300);
+    for (var i = 0; i < particleArray.length; i++) {
+        particleArray[i].update(mouse);
+        particleArray[i].draw();
+    }
+    requestAnimationFrame(animateParticles);
+    requestAnimationFrame(animate);
 }
 function animate2() {
     ctx.globalAlpha = 0.25;
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
     for (var i = 0; i < particlesArray.length; i++) {
-        particleArray[i].update(mouse);
+        particlesArray[i].update(mouse);
         ctx.globalAlpha = particlesArray[i].getSpeed() * 0.5;
         particlesArray[i].draw();
     }
@@ -226,12 +229,10 @@ function animate2() {
 }
 function rain(evt) {
     init();
-    initParticles();
     animate();
 }
 function rain2(evt) {
     init();
-    animateParticles();
     animate2();
 }
 //codigo para efecto de particulas
