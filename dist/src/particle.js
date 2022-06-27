@@ -1,9 +1,9 @@
 var Particle = /** @class */ (function () {
     function Particle(width, height, screenCanvas, mapImg) {
-        this.width = width;
+        this.width = width / 2;
         this.height = height;
         this.ctx = screenCanvas;
-        this.x = Math.random() * width;
+        this.x = Math.random() * (width / 2);
         this.y = 0;
         this.speed = 0;
         this.velocity = Math.random() * 2.5;
