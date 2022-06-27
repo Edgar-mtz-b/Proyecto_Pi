@@ -116,6 +116,7 @@ export class ParticleText {
       particle1.draw();
       requestAnimationFrame(animate);
     }
+  }
   /*
   public update(mouse: any) {
     let dx = mouse.x - this.x;

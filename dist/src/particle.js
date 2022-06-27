@@ -56,6 +56,8 @@ var ParticleText = /** @class */ (function () {
     }
   */
     function ParticleText(x, y, screenCanvas, mapImg) {
+        this.ctx = screenCanvas;
+        this.mappedImage = mapImg;
         this.x = x;
         this.y = y;
         this.size = 10;
