@@ -86,7 +86,7 @@ export class ParticleText {
     this.mappedImage = mapImg;
   }
 */
-  constructor(x:number,y:number, screenCanvas?: CanvasRenderingContext2D,
+  constructor(x:number,y:number,screenCanvas?: CanvasRenderingContext2D,
     mapImg?: number[][][])
   {
     this.ctx = screenCanvas;

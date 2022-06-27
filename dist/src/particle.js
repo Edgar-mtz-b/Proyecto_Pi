@@ -80,43 +80,6 @@ var ParticleText = /** @class */ (function () {
             particle1.draw();
             requestAnimationFrame(animate);
         }
-        /*
-        public update(mouse: any) {
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let distance = Math.sqrt(dx*dx + dy*dy);
-          let forceDirectionX = dx / distance;
-          let forceDirectionY = dy / distance;
-          var maxDistance = mouse.radius;
-          var force = (maxDistance - distance) / maxDistance;
-      
-          let directionX = (forceDirectionX * force * this.density);
-          let directionY = (forceDirectionY * force * this.density);
-          
-          if (distance < mouse.radius) {
-            this.x -= directionX ;
-            this.y -= directionY ;
-          }
-          else {
-            if (this.x !== this.baseX ) {
-                let dx = this.x - this.baseX;
-                this.x -= dx/5;
-            } if (this.y !== this.baseY) {
-                let dy = this.y - this.baseY;
-                this.y -= dy/5;
-            }
-          }
-        }
-      */
-        /*
-          public draw() {
-            this.ctx.fillStyle = 'blue';
-            this.ctx.beginPath();
-            this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
-            this.ctx.closePath();
-            this.ctx.fill();
-          }
-        */
     };
     return ParticleText;
 }());
