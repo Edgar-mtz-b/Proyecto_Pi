@@ -41,20 +41,6 @@ var Particle = /** @class */ (function () {
 }());
 export { Particle };
 var ParticleText = /** @class */ (function () {
-    /*
-    constructor(x: number, y: number, screenCanvas?: CanvasRenderingContext2D,
-      mapImg?: number[][][]) {
-      this.ctx = screenCanvas;
-      this.x = x;// + 200;
-      this.y = y;// - 100,
-      this.size = 1;
-      this.baseX = this.x;
-      this.baseY = this.y;
-      this.density = ((Math.random() * 30) + 1);
-      this._2PI = Math.PI * 2;
-      this.mappedImage = mapImg;
-    }
-  */
     function ParticleText(x, y, screenCanvas, mapImg) {
         this.ctx = screenCanvas;
         this.mappedImage = mapImg;
@@ -64,12 +50,23 @@ var ParticleText = /** @class */ (function () {
         this.weight = 2;
         this.directionX = 1;
     }
-    ParticleText.prototype.update = function () {
+    ParticleText.prototype.constructor2 = function (x, y, screenCanvas, mapImg) {
+        this.ctx = screenCanvas;
+        this.x = x; // + 200;
+        this.y = y; // - 100,
+        this.size = 1;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = ((Math.random() * 30) + 1);
+        this._2PI = Math.PI * 2;
+        this.mappedImage = mapImg;
+    };
+    ParticleText.prototype.update2 = function () {
         this.weight += 0.01;
         this.y += this.weight;
     };
-    ParticleText.prototype.draw = function () {
-        this.ctx.fillStyle = 'blue';
+    ParticleText.prototype.draw2 = function () {
+        this.ctx.fillStyle = 'red';
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         this.ctx.closePath();
@@ -90,6 +87,38 @@ var ParticleText = /** @class */ (function () {
           requestAnimationFrame(animate);
         }
         */
+    };
+    ParticleText.prototype.update = function (mouse) {
+        var dx = mouse.x - this.x;
+        var dy = mouse.y - this.y;
+        var distance = Math.sqrt(dx * dx + dy * dy);
+        var forceDirectionX = dx / distance;
+        var forceDirectionY = dy / distance;
+        var maxDistance = mouse.radius;
+        var force = (maxDistance - distance) / maxDistance;
+        var directionX = (forceDirectionX * force * this.density);
+        var directionY = (forceDirectionY * force * this.density);
+        if (distance < mouse.radius) {
+            this.x -= directionX;
+            this.y -= directionY;
+        }
+        else {
+            if (this.x !== this.baseX) {
+                var dx_1 = this.x - this.baseX;
+                this.x -= dx_1 / 5;
+            }
+            if (this.y !== this.baseY) {
+                var dy_1 = this.y - this.baseY;
+                this.y -= dy_1 / 5;
+            }
+        }
+    };
+    ParticleText.prototype.draw = function () {
+        this.ctx.fillStyle = 'blue';
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
+        this.ctx.closePath();
+        this.ctx.fill();
     };
     return ParticleText;
 }());
