@@ -221,7 +221,9 @@ function animate() {
   }
   */
   imagenSal = new ImageType(pantalla2, null, 300, 300, true);
-  requestAnimationFrame(animate);
+  init();  
+  animateParticles();
+//  requestAnimationFrame(animate);
 }
 
 function animate2() {
@@ -237,9 +239,7 @@ function animate2() {
 }
 
 function rain(evt: any): void { 
-//  init();
-  initParticles();
-  animateParticles();
+  
   animate();
 }
 
