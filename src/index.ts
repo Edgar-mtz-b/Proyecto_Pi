@@ -280,7 +280,6 @@ function initParticles() {
     }
   } 
 }
-
 function animateParticles(){
   pantalla1.clearRect(0,0,300,300);
   for (let i = 0; i < particleArray.length; i++){
