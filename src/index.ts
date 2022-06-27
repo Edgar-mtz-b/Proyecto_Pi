@@ -280,11 +280,11 @@ function initParticles() {
     }
   } 
 }
+
 function animateParticles(){
   pantalla1.clearRect(0,0,300,300);
   for (let i = 0; i < particleArray.length; i++){
-    particleArray[i].update2();
-    //  particleArray[i].draw2();
+      particleArray[i].update(mouse);
       particleArray[i].draw();
   }
   requestAnimationFrame(animateParticles);

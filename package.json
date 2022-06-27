@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jorrgeCruz/image-processing#readme",
   "devDependencies": {
+    "typescript": "^4.7.4",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12"
   }
