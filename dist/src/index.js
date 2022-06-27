@@ -230,9 +230,9 @@ function animate2() {
     requestAnimationFrame(animate2);
 }
 function rain(evt) {
+    convertirARojo;
     init();
     animate();
-    convertirARojo;
 }
 function rain2(evt) {
     init2();
