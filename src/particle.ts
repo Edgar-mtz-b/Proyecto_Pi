@@ -11,7 +11,13 @@ export class Particle {
   protected position1: number;
   protected position2: number;
   protected mappedImage: any[][][];
-  
+  //cambios
+  protected angle:number;
+  protected random:number;
+  protected letter:number;
+  protected counter:number;
+  protected switcher:number;
+  /*
   constructor(width: number, height: number,
     screenCanvas: CanvasRenderingContext2D,
     mapImg: number[][][]) {
@@ -28,7 +34,61 @@ export class Particle {
     this.position2 = Math.floor(this.x);
     this.mappedImage = mapImg;
   }
+*/
 
+constructor(width: number, height: number,
+  screenCanvas: CanvasRenderingContext2D,
+  mapImg: number[][][])
+{
+  this.width=width;
+  this.height=height;
+  this.x = Math.random() * width;
+  this.y = Math.random() * height;
+  this.speed = 0;
+  this.velocity = Math.random() * 0.5;
+  this.size = Math.random() * 2.5 + 0.2;
+  this.position1 = Math.floor(this.y);
+  this.position2 = Math.floor(this.x);
+  this.angle = 0;
+  this.counter=0;
+  this.switcher=1;
+  this.random = Math.random();
+  this.mappedImage = mapImg;
+}
+public update()
+{
+  this.position1=Math.floor(this.y);
+  this.position2 = Math.floor(this.x);
+  if ((this.mappedImage[this.position1])&&(this.mappedImage[this.position1][this.position2])){
+       this.speed = this.mappedImage[this.position1][this.position2][0];
+  }
+  let movement = (2.5 - this.speed) + this.velocity;
+  this.angle += this.speed/20;
+   this.size = this.speed * 2.5;
+   this.y -= movement;
+            this.x += movement + Math.sin(this.angle) * 2;
+            if (this.y <= 0){
+                this.y = this.height;
+                this.x = Math.random() * this.width;
+            }
+            if (this.x >= this.width){
+                this.x = 0;
+                this.y = Math.random() * this.height;
+            }
+}
+public draw()
+{
+  this.ctx.beginPath();
+  if ((this.mappedImage[this.position1])&&(this.mappedImage[this.position1][this.position2])){
+                this.ctx.fillStyle = this.mappedImage[this.position1][this.position2][1];
+                this.ctx.strokeStyle = this.mappedImage[this.position1][this.position2][1];
+            }
+            //ctx.fillStyle = gradient1;
+            //ctx.strokeRect(this.x, this.y, this.size * 3, this.size * 3);
+            this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            this.ctx.fill();
+}
+/*
   public update() {
     this.position1 = Math.floor(this.y);
     this.position2 = Math.floor(this.x);
@@ -45,7 +105,8 @@ export class Particle {
       this.x = Math.random() * this.width;
     }
   }
-
+*/
+/*
   public draw() {
     this.ctx.beginPath();
     //this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];
@@ -53,7 +114,7 @@ export class Particle {
     this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
     this.ctx.fill();
   }
-
+*/
   public getSpeed(): number {
     return this.speed;
   }
