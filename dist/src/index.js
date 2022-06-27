@@ -208,7 +208,11 @@ function animate() {
       particlesArray[i].draw();
     }
     */
-    pantalla1.clearRect(0, 0, 300, 300);
+    //pantalla1.clearRect(0,0,300,300);
+    ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
+    ctx.globalAlpha = 0.25;
+    ctx.fillStyle = 'rgb(0,0,0)';
+    ctx.fillRect(0, 0, w, h);
     for (var i = 0; i < particleArray.length; i++) {
         particleArray[i].update(mouse);
         particleArray[i].draw();
