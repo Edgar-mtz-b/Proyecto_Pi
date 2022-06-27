@@ -200,7 +200,7 @@ var imagenSal: ImageType;
 
 function init() {
   //init
-  var imagenSal: ImageType = new ImageType(pantalla1,imagenSal.getArrayImg()) //imgLocal.getImage());
+  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
   let tmp = MathImg.relativeBrightness(imagenSal);
   w = imagenSal.getWidth();
   h = imagenSal.getHeight();
@@ -218,7 +218,6 @@ function animate() {
     particlesArray[i].update();
     particlesArray[i].draw();
   }
-  
   requestAnimationFrame(animate);
 }
 
@@ -268,7 +267,6 @@ function textEfects(evt: any): void{
   imagenSal = new ImageType(pantalla1, null, 300, 300, true);
   initParticles();
   animateParticles();
-  rain(imagenSal);
 }
 
 function initParticles() {

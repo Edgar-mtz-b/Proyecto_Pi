@@ -21,7 +21,7 @@ export class Particle {
     this.x = Math.random() * width;
     this.y = 0;
     this.speed = 0;
-    this.velocity = Math.random() * 0.5;
+    this.velocity = Math.random() * 2.5;
     this.size = Math.random() * 1.5 + 1;
     this._2PI = Math.PI * 2;
     this.position1 = Math.floor(this.y);
@@ -48,10 +48,8 @@ export class Particle {
 
   public draw() {
     this.ctx.beginPath();
-   
-    this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];
-    this.ctx.lineWidth=50;
-    //this.ctx.fillStyle = 'white';
+    //this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];
+    this.ctx.fillStyle = 'white';
     this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
     this.ctx.fill();
   }

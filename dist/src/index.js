@@ -188,7 +188,7 @@ particlesArray = new Array(0);
 var imagenSal;
 function init() {
     //init
-    var imagenSal = new ImageType(pantalla1, imagenSal.getArrayImg()); //imgLocal.getImage());
+    var imagenSal = new ImageType(pantalla1, imgLocal.getImage());
     var tmp = MathImg.relativeBrightness(imagenSal);
     w = imagenSal.getWidth();
     h = imagenSal.getHeight();
@@ -248,7 +248,6 @@ function textEfects(evt) {
     imagenSal = new ImageType(pantalla1, null, 300, 300, true);
     initParticles();
     animateParticles();
-    rain(imagenSal);
 }
 function initParticles() {
     particleArray = [];
