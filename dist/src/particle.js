@@ -79,7 +79,7 @@ var ParticleText = /** @class */ (function () {
         }
     };
     ParticleText.prototype.draw = function () {
-        this.ctx.fillStyle = 'blue';
+        this.ctx.fillStyle = 'red';
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.size, 0, this._2PI);
         this.ctx.closePath();
