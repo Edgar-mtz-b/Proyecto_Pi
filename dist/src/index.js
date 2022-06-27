@@ -208,7 +208,7 @@ function animate() {
       particlesArray[i].draw();
     }
     */
-    imagenSal = new ImageType(pantalla1, null, 300, 300, true);
+    imagenSal = new ImageType(pantalla2, null, 300, 300, true);
     requestAnimationFrame(animate);
 }
 function animate2() {
