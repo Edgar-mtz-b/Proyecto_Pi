@@ -203,7 +203,7 @@ function animate() {
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
     for (var i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update(mouse);
+        particlesArray[i].update();
         particlesArray[i].draw();
     }
     requestAnimationFrame(animate);
@@ -213,7 +213,7 @@ function animate2() {
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
     for (var i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update(mouse);
+        particlesArray[i].update();
         ctx.globalAlpha = particlesArray[i].getSpeed() * 0.5;
         particlesArray[i].draw();
     }
@@ -221,12 +221,10 @@ function animate2() {
 }
 function rain(evt) {
     init();
-    animateParticles();
     animate();
 }
 function rain2(evt) {
     init();
-    animateParticles();
     animate2();
 }
 //codigo para efecto de particulas
@@ -257,7 +255,7 @@ function initParticles() {
     for (var i = 0; i < 300; i++) {
         for (var j = 0; j < 300; j++) {
             if (arrImage[0][i][j] > 128) {
-                particleArray.push(new ParticleText(j, i, pantalla2));
+                particleArray.push(new ParticleText(j, i, pantalla1));
             }
         }
     }
