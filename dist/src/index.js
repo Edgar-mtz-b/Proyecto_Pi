@@ -206,7 +206,6 @@ function animate() {
         particlesArray[i].update();
         particlesArray[i].draw();
     }
-    animateParticles();
     requestAnimationFrame(animate);
 }
 function animate2() {
@@ -221,8 +220,7 @@ function animate2() {
     requestAnimationFrame(animate2);
 }
 function rain(evt) {
-    initParticles();
-    //  init();
+    init();
     animate();
 }
 function rain2(evt) {
