@@ -11,24 +11,67 @@ export class Particle {
   protected position1: number;
   protected position2: number;
   protected mappedImage: any[][][];
+  //cambios
   
-  constructor(width: number, height: number,
+  protected baseY: number;
+  protected baseX: number;
+  protected density: number;
+  constructor(x: number, y: number,
     screenCanvas: CanvasRenderingContext2D,
     mapImg: number[][][]) {
+      this.ctx = screenCanvas;
+      this.x = x;// + 200;
+      this.y = y;// - 100,
+      this.size = 1;
+      this.baseX = this.x;
+      this.baseY = this.y;
+      this.density = ((Math.random() * 30) + 1);
+      this._2PI = Math.PI * 2;
+      this.mappedImage = mapImg;
+      /*
     this.width = width;
     this.height = height;
     this.ctx = screenCanvas;
     this.x = Math.random() * width;
     this.y = 0;
     this.speed = 0;
+    this.baseX = this.x;
+    this.baseY = this.y;
     this.velocity = Math.random() * 2.5;
     this.size = Math.random() * 1.5 + 1;
     this._2PI = Math.PI * 2;
     this.position1 = Math.floor(this.y);
     this.position2 = Math.floor(this.x);
     this.mappedImage = mapImg;
+    */
   }
+  public update(mouse: any) {
+    let dx = mouse.x - this.x;
+    let dy = mouse.y - this.y;
+    let distance = Math.sqrt(dx*dx + dy*dy);
+    let forceDirectionX = dx / distance;
+    let forceDirectionY = dy / distance;
+    var maxDistance = mouse.radius;
+    var force = (maxDistance - distance) / maxDistance;
 
+    let directionX = (forceDirectionX * force * this.density);
+    let directionY = (forceDirectionY * force * this.density);
+    
+    if (distance < mouse.radius) {
+      this.x -= directionX ;
+      this.y -= directionY ;
+    }
+    else {
+      if (this.x !== this.baseX ) {
+          let dx = this.x - this.baseX;
+          this.x -= dx/5;
+      } if (this.y !== this.baseY) {
+          let dy = this.y - this.baseY;
+          this.y -= dy/5;
+      }
+    }
+  }
+/*
   public update() {
     this.position1 = Math.floor(this.y);
     this.position2 = Math.floor(this.x);
@@ -45,7 +88,7 @@ export class Particle {
       this.x = Math.random() * this.width;
     }
   }
-
+*/
   public draw() {
     this.ctx.beginPath();
     //this.ctx.fillStyle = this.mappedImage[1][this.position1][this.position2];

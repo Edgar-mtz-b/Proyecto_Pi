@@ -215,7 +215,7 @@ function animate() {
   ctx.fillStyle = 'rgb(0,0,0)';
   ctx.fillRect(0, 0, w, h);
   for (let i = 0; i < particlesArray.length; i++){
-    particlesArray[i].update();
+    particlesArray[i].update(mouse);
     particlesArray[i].draw();
   }
   
@@ -227,7 +227,7 @@ function animate2() {
   ctx.fillStyle = 'rgb(0,0,0)';
   ctx.fillRect(0, 0, w, h);
   for (let i = 0; i < particlesArray.length; i++){
-    particlesArray[i].update();
+    particlesArray[i].update(mouse);
     ctx.globalAlpha = particlesArray[i].getSpeed()*0.5;
     particlesArray[i].draw();
   }
