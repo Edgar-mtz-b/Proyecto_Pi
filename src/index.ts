@@ -200,6 +200,7 @@ var imagenSal: ImageType;
 
 function init() {
   //init
+  convertirARojo;
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
   let tmp = MathImg.relativeBrightness(imagenSal);
   w = imagenSal.getWidth();
@@ -220,7 +221,7 @@ function init2() {
 }
 //funcion de particulas de lluvia negra
 function animate() {
-  convertirARojo;
+  
   ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
   ctx.globalAlpha = 0.25;
   ctx.fillStyle = 'rgb(0,0,0)';
@@ -247,7 +248,6 @@ function animate2() {
 function rain(evt: any): void { 
   init();
   animate();
-  rain2;
 }
 
 function rain2(evt: any): void { 
