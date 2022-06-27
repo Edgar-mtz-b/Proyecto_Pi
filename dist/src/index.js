@@ -221,10 +221,12 @@ function animate2() {
 }
 function rain(evt) {
     init();
+    animateParticles();
     animate();
 }
 function rain2(evt) {
     init();
+    animateParticles();
     animate2();
 }
 //codigo para efecto de particulas
