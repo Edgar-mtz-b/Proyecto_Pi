@@ -209,10 +209,14 @@ function init() {
   }
 }
 function init2() {
+  
   //init
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  let inicio=0, termino= imagenSal.getWidth()/2;
+  inicio = termino;
+  termino = 2 * imagenSal.getWidth() / 2;
   let tmp = MathImg.relativeBrightness(imagenSal);
-  w = (imagenSal.getWidth()/2)+(imagenSal.getWidth()/2);
+  w = termino;
   h = imagenSal.getHeight();
   for (let i = 0; i < numberOfParticles; i++){
     particlesArray.push(new Particle(w, h, ctx, tmp));
@@ -228,6 +232,7 @@ function animate() {
     particlesArray[i].update();
     particlesArray[i].draw();
   }
+  
   requestAnimationFrame(animate);
 }
 
