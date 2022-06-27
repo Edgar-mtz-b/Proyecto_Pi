@@ -205,7 +205,7 @@ function init2() {
     var tmp = MathImg.relativeBrightness(imagenSal);
     w = termino;
     h = imagenSal.getHeight();
-    for (var i = 0; i < numberOfParticles; i++) {
+    for (var i = inicio; i < termino; i++) {
         particlesArray.push(new Particle(w, h, ctx, tmp));
     }
 }
