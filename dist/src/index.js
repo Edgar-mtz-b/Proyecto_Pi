@@ -208,14 +208,12 @@ function init2() {
 }
 //funcion de particulas de lluvia negra
 function animate() {
-    ctx.globalAlpha = 0.50;
     ctx.drawImage(imgLocal.getImage(), 0, 0, w, h);
     ctx.globalAlpha = 0.25;
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, w, h);
     for (var i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
-        ctx.globalAlpha = particlesArray[i].getSpeed() * 0.5;
         particlesArray[i].draw();
     }
     requestAnimationFrame(animate);
