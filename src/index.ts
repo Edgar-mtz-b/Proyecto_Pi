@@ -268,6 +268,8 @@ function textEfects(evt: any): void{
   imagenSal = new ImageType(pantalla1, null, 300, 300, true);
   initParticles();
   animateParticles();
+  init();
+  animate();
 }
 
 function initParticles() {
