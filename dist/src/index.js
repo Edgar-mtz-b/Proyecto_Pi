@@ -192,9 +192,9 @@ function init() {
     var tmp = MathImg.relativeBrightness(imagenSal);
     w = imagenSal.getWidth();
     h = imagenSal.getHeight();
-    for (var i = 0; i < numberOfParticles; i++) {
-        particlesArray.push(new Particle(w, h, ctx, tmp));
-    }
+    // for (let i = 0; i < numberOfParticles; i++){
+    //   particlesArray.push(new Particle(w, h, ctx, tmp));
+    // }
     //particleArray = [];
     var arrImage = imagenSal.getArrayImg();
     for (var i = 0; i < 300; i++) {
