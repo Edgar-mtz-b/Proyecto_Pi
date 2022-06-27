@@ -260,7 +260,7 @@ function initParticles() {
     for (var i = 0; i < 300; i++) {
         for (var j = 0; j < 300; j++) {
             if (arrImage[0][i][j] > 128) {
-                particleArray.push(new ParticleText(j, i, pantalla1));
+                particleArray.push(new ParticleText(j, i, pantalla2));
             }
         }
     }
